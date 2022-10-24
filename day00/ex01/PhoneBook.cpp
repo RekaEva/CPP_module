@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:48:43 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/24 16:51:02 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:15:00 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void PhoneBook::search()
 	index = 0;
 	if (str.length() == 1 && std::isdigit(str[0]))
 		index = std::stoi(str);
-	std::cin.ignore(32767, '\n');
 	if (index > 0 && index < 9)
 	{
 		if ((mybook[index - 1].getName().length() != 0))
