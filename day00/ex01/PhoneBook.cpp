@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:48:43 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/24 17:15:00 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:19:44 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,40 @@ PhoneBook::PhoneBook(void) : curIndex(0)
 PhoneBook::~PhoneBook()
 {
 }
+
+void	check_empty(std::string input, std::string message)
+{
+	while (input.empty())
+		{
+			std::cout << "please, try again: " << std::endl;
+			std::cout << message << std::endl;
+			std::getline(std::cin, input);
+		}
+}
+
 void PhoneBook::add()
 {
 	std::string input;
 
 	std::cout << "first name: " << std::endl;
-	std::cin >> input;
+		std::getline(std::cin, input);
+		check_empty(input, "first name: ");
 	mybook[curIndex].setName(input);
 	std::cout << "last name: " << std::endl;
-	std::cin >> input;
+		std::getline(std::cin, input);
+		check_empty(input, "last name: ");
 	mybook[curIndex].setLastname(input);
 	std::cout << "nick name: " << std::endl;
-	std::cin >> input;
+		std::getline(std::cin, input);
+		check_empty(input, "nick name: ");
 	mybook[curIndex].setNick(input);
 	std::cout << "phone number: " << std::endl;
-	std::cin >> input;
+		std::getline(std::cin, input);
+		check_empty(input, "phone number: ");
 	mybook[curIndex].setNumber(input);
 	std::cout << "secret: " << std::endl;
-	std::cin >> input;
+		std::getline(std::cin, input);
+		check_empty(input, "secret: ");
 	mybook[curIndex].setSecret(input);
 	curIndex++;
 	curIndex %= MAX_SIZE;
@@ -66,11 +82,11 @@ void PhoneBook::printShortContact(int index)
 
 void PhoneBook::printFullContact(int index)
 {
-	std::cout << "first name " << mybook[index].getName() << std::endl;
-	std::cout << "last name " << mybook[index].getLastname() << std::endl;
-	std::cout << "nickname " << mybook[index].getNickname() << std::endl;
-	std::cout << "phone number " << mybook[index].getNumber() << std::endl;
-	std::cout << "secret " << mybook[index].getSecret() << std::endl;
+	std::cout << "first name: " << mybook[index].getName() << std::endl;
+	std::cout << "last name: " << mybook[index].getLastname() << std::endl;
+	std::cout << "nickname: " << mybook[index].getNickname() << std::endl;
+	std::cout << "phone number: " << mybook[index].getNumber() << std::endl;
+	std::cout << "secret: " << mybook[index].getSecret() << std::endl;
 }
  
 void PhoneBook::search()
@@ -82,7 +98,7 @@ void PhoneBook::search()
 	while (++index < MAX_SIZE)
 		printShortContact(index);
 	std::cout << "Enter the index from 1 to " << MAX_SIZE << std::endl;
-	std::cin >> str;
+	std::getline(std::cin, str);
 	if (std::cin.eof())
 		return ;
 	index = 0;
