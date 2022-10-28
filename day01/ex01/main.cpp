@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 15:35:50 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/28 19:23:54 by cpollito         ###   ########.fr       */
+/*   Created: 2022/10/28 19:22:28 by cpollito          #+#    #+#             */
+/*   Updated: 2022/10/28 22:01:24 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void randomChump( std::string name )
+int main()
 {
-	Zombie	Chump = Zombie(name);
-	Chump.announce();
-}
+	int n;
+
+	n = 3;
+	Zombie *my_army = zombieHorde(n, "Boris");
+	for (int i = 0; i < n; i++)
+		my_army[i].announce();
+	delete [] my_army;
+	return (0);
+} 
