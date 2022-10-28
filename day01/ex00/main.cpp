@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:35:42 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/26 16:32:17 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:18:07 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 int main()
 {
-	Zombie zombie;
-	
-	zombie.announce();
+	Zombie	Ben("Ben");
+	Zombie	*John;
+
+	Ben.announce();
+	John = newZombie("John");
+	John->announce();
+	randomChump("Andy");
+	delete John;
 	return (0);
-}
+} 

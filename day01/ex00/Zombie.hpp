@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:35:57 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/26 15:51:01 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:08:46 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,11 @@ class Zombie
 	private:
 		std::string name;
 	public:
-		Zombie();
+		Zombie(std::string zname);
 		~Zombie();
 		void announce( void);
 };
 
-Zombie::Zombie()
-{
-}
-
-Zombie::~Zombie()
-{
-}
-
+Zombie* newZombie(std::string name);
+void randomChump( std::string name );
 #endif

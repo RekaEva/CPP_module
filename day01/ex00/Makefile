@@ -6,19 +6,18 @@
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 15:28:20 by cpollito          #+#    #+#              #
-#    Updated: 2022/10/26 16:33:04 by cpollito         ###   ########.fr        #
+#    Updated: 2022/10/28 17:47:27 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 
-SRC = main.cpp Zombie.cpp 
-# PhoneBook.cpp 
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-HEADER = Contact.hpp PhoneBook.hpp
+HEADER = Zombie.hpp
 
 CC = c++
-CPPFLAGC = -Wall -Wextra -Werror -std=c++98
+CPPFLAGC = -Wall -Wextra -Werror -g3 -std=c++98 
 
 OBJ = $(SRC:%.cpp=%.o)
 
