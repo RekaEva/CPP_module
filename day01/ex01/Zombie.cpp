@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:22:37 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/28 22:17:45 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/29 13:54:33 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,3 @@ void	Zombie::announce(void)
 	std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie* zombieHorde(int N, std::string name)
-{
-	Zombie *army = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		army[i].setName(name);
-	return (army);
-}

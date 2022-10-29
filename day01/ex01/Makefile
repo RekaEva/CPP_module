@@ -6,11 +6,11 @@
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 19:22:32 by cpollito          #+#    #+#              #
-#    Updated: 2022/10/28 19:23:27 by cpollito         ###   ########.fr        #
+#    Updated: 2022/10/29 13:43:47 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = zombiehorde
 
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
 

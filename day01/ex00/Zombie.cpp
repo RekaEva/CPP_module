@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:35:54 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/28 19:24:02 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:46:41 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,6 @@ Zombie::~Zombie()
 {
 	std::cout << "Zombie " << name << " destroyed..." << std::endl;
 }
-
-// void randomChump( std::string name )
-// {
-// 	Zombie	Chump = Zombie(name);
-// 	Chump.announce();
-// }
-
-// Zombie *newZombie(std::string name)
-// {
-// 	Zombie *nzombie = new Zombie(name);
-// 	return (nzombie);
-// }
 
 void	Zombie::announce(void)
 {
