@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 16:36:36 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/29 19:40:23 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/10/30 14:05:42 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ class HumanB
 		void setWeapon(Weapon &weapon);
 		
 };
-
 
 #endif
