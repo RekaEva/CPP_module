@@ -1,50 +1,38 @@
-#include "iostream"
-#include "string"
+// #include <iostream>     // std::cout
+// #include <fstream>      // std::ifstream
+// #include <string>
 
-// class Student
-// {
-// 	private:
-// 		std::string login;
-// 	public:
-// 		Student(): login("Mikki")
-// 		{
-// 			std::cout << "Student " << this->login << " is born\n";
-// 		}
-// 		~Student()
-// 		{
-// 			std::cout << "Student " <<this->login << " died" << std::endl;
-// 		}
-// };
+// int main () {
+//   std::ifstream ifs;
 
-// int main()
-// {
-// 	Student *students = new Student[3];
+//   ifs.open ("inFile", std::ifstream::in);
 
-// 	delete [] students;
+//  std::string str;
+//   while (getline(ifs, str)) {
+//     std::cout << str;
+//   }
+
+//   ifs.close();
+
+//   return 0;
 // }
 
-class Student
+#include <iostream>
+#include <string>
+
+int main ()
 {
-	private:
-		std::string login;
-	public:
-		Student(std::string login) : login(login)
-		{
-			std::cout << "Student " << this->login << " is born\n";
-		}
-		~Student()
-		{
-			std::cout << "Student " <<this->login << " died" << std::endl;
-		}
-};
-
-int main()
-{
-	Student bob = Student("bfubar"); // память выделяется на стеке
-	Student*  jim = new Student("jfubar"); // почему указатель?
-
-	// do some stuff here
-
-	delete jim; // jim is desrtoyed
-	return (0); // bob is destroyed
+  std::string str ("This is an example sentence.");
+  std::cout << str << '\n';
+                                           // "This is an example sentence."
+  str.erase (10,8);                        //            ^^^^^^^^
+  std::cout << str << '\n';
+                                           // "This is an sentence."
+  str.erase (str.begin()+9);               //           ^
+  std::cout << str << '\n';
+                                           // "This is a sentence."
+  str.erase (str.begin()+5, str.end()-9);  //       ^^^^^
+  std::cout << str << '\n';
+                                           // "This sentence."
+  return 0;
 }
