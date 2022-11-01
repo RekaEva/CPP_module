@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 12:30:42 by cpollito          #+#    #+#             */
-/*   Updated: 2022/10/30 20:50:24 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:34:21 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ int main(int argc, char **argv)
 	while (std::getline(inFile, strInput))
 	{
 		position = strInput.find(argv[2]);
-		if (position != -1)
+		while (position != -1)
 		{
 			strInput.erase(position, std::string(argv[2]).length());
 			strInput.insert(position, std::string(argv[3]));
+			position = strInput.find(std::string(argv[2]), position + std::string(argv[2]).length());
 		}
 		outFile << strInput << std::endl;	
 	}
