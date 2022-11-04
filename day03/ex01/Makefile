@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/02 14:44:36 by cpollito          #+#    #+#              #
-#    Updated: 2022/11/03 16:36:56 by cpollito         ###   ########.fr        #
+#    Created: 2022/11/04 13:59:17 by cpollito          #+#    #+#              #
+#    Updated: 2022/11/04 14:14:47 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed_one
+NAME = ClapTrap
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp
 
-HEADER = Fixed.hpp
+HEADER = ClapTrap.hpp
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 

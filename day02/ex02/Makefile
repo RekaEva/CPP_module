@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/02 14:44:36 by cpollito          #+#    #+#              #
-#    Updated: 2022/11/03 16:36:56 by cpollito         ###   ########.fr        #
+#    Created: 2022/11/03 16:36:41 by cpollito          #+#    #+#              #
+#    Updated: 2022/11/03 16:37:04 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed_one
+NAME = fixed_two
 
 SRC = main.cpp Fixed.cpp
 
