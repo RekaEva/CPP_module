@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:20:41 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/04 18:06:05 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:25:25 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ ClapTrap::~ClapTrap(){ std::cout << "Destructor called\n"; }
 ClapTrap::ClapTrap(const std::string &_name)
 {
 	this->name = _name;
+	this->hitPoint = 10;
+	this->Energy = 10;
+	this->attackDamage = 0;
 	std::cout<<"Constructor with name" << std::endl;
 }
 
@@ -50,10 +53,12 @@ void ClapTrap::attack(const std::string &target)
 		std::cout<<"You cann't attack this object\n" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->name << "attacks " << target << \
+		std::cout << "ClapTrap " << this->name << " attacks " << target << \
 		", causing " << attackDamage << " points of damage!" << std::endl;
 		Energy--;
 	}
+	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;
+	std::cout<< "-----------------" <<std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -65,6 +70,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 		std::cout<< "ClapTrap "<< name<< " is already dead."<<std::endl;
+	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;
+	std::cout<< "-----------------" <<std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -76,7 +83,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap "<< name << " repairs " << amount << " HP" << std::endl;
 	}
 	else
-		std::cout<< "ClapTrap "<< name << " has no energy or HP left to do anything." << std::endl;
+		std::cout<< "ClapTrap "<< name << " has no energy or HP. It can't to do anything." << std::endl;
+	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;
+	std::cout<< "-----------------" <<std::endl;
+		
+		
 }
 
 void ClapTrap::setAttackDamage(int damage)

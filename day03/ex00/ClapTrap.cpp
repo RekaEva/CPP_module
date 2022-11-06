@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:20:41 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/04 18:06:05 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:25:43 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ ClapTrap::~ClapTrap(){ std::cout << "Destructor called\n"; }
 ClapTrap::ClapTrap(const std::string &_name)
 {
 	this->name = _name;
+	this->hitPoint = 10;
+	this->Energy = 10;
+	this->attackDamage = 0;
 	std::cout<<"Constructor with name" << std::endl;
 }
 

@@ -6,15 +6,15 @@
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 13:59:17 by cpollito          #+#    #+#              #
-#    Updated: 2022/11/04 14:14:47 by cpollito         ###   ########.fr        #
+#    Updated: 2022/11/06 18:03:52 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
-HEADER = ClapTrap.hpp
+HEADER = ClapTrap.hpp  ScavTrap.hpp
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 
