@@ -6,11 +6,11 @@
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 13:59:17 by cpollito          #+#    #+#              #
-#    Updated: 2022/11/04 14:14:47 by cpollito         ###   ########.fr        #
+#    Updated: 2022/11/06 18:46:23 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = claptrap
 
 SRC = main.cpp ClapTrap.cpp
 

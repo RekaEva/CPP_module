@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 19:58:42 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/07 13:38:02 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:37:53 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ ScavTrap::ScavTrap() : ClapTrap () // инициализируем новые д
 	setHP(100);
 	setEnergy(50);
 	setAttackDamage(20);
-	std::cout<<"Default constructor ScavTrap " << getName() << std::endl;
+	std::cout<<"Default constructor ScavTrap" << getName() << std::endl;
 }
+
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) // сначала вызывается логика claptrap, потом scavtrap
 {
 	std::cout<<"ScavTrap default constructor with name " << getName() << std::endl;
@@ -40,7 +41,7 @@ const ScavTrap &ScavTrap::operator =(const ScavTrap &obj) // вызываем ч
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Destructor ScavTrap " << getName() << std::endl;
+	std::cout << "Destructor ScavTrap" << getName() << std::endl;
 }
 
 void ScavTrap::guardGate()
@@ -59,4 +60,5 @@ void ScavTrap::attack(const std::string& target)
 		setEnergy(getEnergy() - 1);
 	}
 	std::cout<< getName() <<"'s health is "<< getHP()<< "HP\t"<< "energy is "<< getEnergy()<< " point"<<std::endl;
+
 }

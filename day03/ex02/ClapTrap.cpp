@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:20:41 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/07 13:40:15 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:36:43 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap()
 	hitPoint = 10;
 	Energy = 10;
 	attackDamage = 0;
-	std::cout<<"Default constructor " << name << std::endl;
+	std::cout<<"Default constructor ClapTrap" << getName() << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &new_obj)
@@ -36,7 +36,7 @@ ClapTrap &ClapTrap::operator =(const ClapTrap &obj) // пишем ключево
 	return (*this); // возвращаем указатель на ноый объект(который здесь создан);
 }
 
-ClapTrap::~ClapTrap(){ std::cout << "Destructor called\n"; }
+ClapTrap::~ClapTrap(){ std::cout << "Destructor called" << getName() << std::endl; }
 
 ClapTrap::ClapTrap(const std::string &_name)
 {
@@ -44,7 +44,7 @@ ClapTrap::ClapTrap(const std::string &_name)
 	this->hitPoint = 10;
 	this->Energy = 10;
 	this->attackDamage = 0;
-	std::cout<<"Constructor with name" << name <<  std::endl;
+	std::cout<<"ClapTrap Constructor with name " << name << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -53,11 +53,12 @@ void ClapTrap::attack(const std::string &target)
 		std::cout<<"You cann't attack this object\n" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->name << "attacks " << target << \
+		std::cout << "ClapTrap " << this->name << " attacks " << target << \
 		", causing " << attackDamage << " points of damage!" << std::endl;
 		Energy--;
 	}
-	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;	
+	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;
+	std::cout<< "-----------------" <<std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -69,7 +70,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 		std::cout<< "ClapTrap "<< name<< " is already dead."<<std::endl;
-	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;	
+	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;
+	std::cout<< "-----------------" <<std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -81,8 +83,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap "<< name << " repairs " << amount << " HP" << std::endl;
 	}
 	else
-		std::cout<< "ClapTrap "<< name << " has no energy or HP left to do anything." << std::endl;
-	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;	
+		std::cout<< "ClapTrap "<< name << " has no energy or HP. It can't to do anything." << std::endl;
+	std::cout<< name <<"'s health is "<< hitPoint<< "HP\t"<< "energy is "<< Energy<< " point"<<std::endl;
+	std::cout<< "-----------------" <<std::endl;
+		
+		
 }
 
 void ClapTrap::setAttackDamage(int damage)
