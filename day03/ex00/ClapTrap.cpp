@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:20:41 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/07 13:40:15 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:08:06 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ClapTrap &ClapTrap::operator =(const ClapTrap &obj) // пишем ключево
 	return (*this); // возвращаем указатель на ноый объект(который здесь создан);
 }
 
-ClapTrap::~ClapTrap(){ std::cout << "Destructor called\n"; }
+ClapTrap::~ClapTrap(){ std::cout << "Destructor called " << name << std::endl; }
 
 ClapTrap::ClapTrap(const std::string &_name)
 {
@@ -44,7 +44,7 @@ ClapTrap::ClapTrap(const std::string &_name)
 	this->hitPoint = 10;
 	this->Energy = 10;
 	this->attackDamage = 0;
-	std::cout<<"Constructor with name" << name <<  std::endl;
+	std::cout<<"Constructor with name " << name <<  std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -53,7 +53,7 @@ void ClapTrap::attack(const std::string &target)
 		std::cout<<"You cann't attack this object\n" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->name << "attacks " << target << \
+		std::cout << "ClapTrap " << this->name << " attacks " << target << \
 		", causing " << attackDamage << " points of damage!" << std::endl;
 		Energy--;
 	}

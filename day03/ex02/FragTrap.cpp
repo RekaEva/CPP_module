@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:54:25 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/07 13:35:56 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:32:21 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ FragTrap::FragTrap() : ClapTrap ()
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
+	setHP(100);
+	setEnergy(100);
+	setAttackDamage(30);
 	std::cout<<"FragTrap default constructor with name" << getName() << std::endl;
 }
 
@@ -46,7 +49,7 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-	std::cout<<"FragTrap "<< this->getName() << " says, \"High five, bro!\"" << std::endl;
+	std::cout<<"FragTrap "<< this->getName() << " says, \"High five!\"" << std::endl;
 }
 
 void FragTrap::attack(const std::string& target)
@@ -55,7 +58,7 @@ void FragTrap::attack(const std::string& target)
 		std::cout<<"You cann't attack this object\n" << std::endl;
 	else
 	{
-		std::cout << "ScapTrap " << getName() << "attacks " << target << \
+		std::cout << "FcagTrap " << getName() << " attacks " << target << \
 		", causing " << getAttackDamage() << " points of damage!" << std::endl;
 		setEnergy(getEnergy() - 1);
 	}
