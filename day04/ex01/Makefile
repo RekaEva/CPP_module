@@ -6,15 +6,15 @@
 #    By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 12:56:30 by cpollito          #+#    #+#              #
-#    Updated: 2022/11/08 15:11:01 by cpollito         ###   ########.fr        #
+#    Updated: 2022/11/08 17:37:03 by cpollito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = animals
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
-HEADER = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+HEADER = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 
