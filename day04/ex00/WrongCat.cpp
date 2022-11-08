@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:39:12 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/08 15:08:12 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:25:39 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongCat::WrongCat(const WrongCat &new_obj) : WrongAnimal()
 	*this = new_obj;
 }
 
-WrongCat &WrongCat::operator =(const WrongCat &obj) // пишем ключевое слово operator, показываем какой(=), и говорим откуда копировать данные
+WrongCat &WrongCat::operator =(const WrongCat &obj)
 {
 	std::cout << "Copy assignment operator in WrongCat called\n";
 	setType(obj.getType());

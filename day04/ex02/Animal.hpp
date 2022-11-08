@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:39:06 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/08 16:25:27 by cpollito         ###   ########.fr       */
+/*   Created: 2022/11/08 12:56:36 by cpollito          #+#    #+#             */
+/*   Updated: 2022/11/08 19:32:52 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL_HPP
-# define WRONG_ANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 
-class WrongAnimal
+class Animal
 {
 protected:
 	std::string type;
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal &new_obj); // Copy constructor
-	WrongAnimal &operator = (const WrongAnimal &obj); //  Copy assignment operator
-	~WrongAnimal();
+	Animal();
+	Animal(const Animal &new_obj);
+	Animal &operator = (const Animal &obj);
+	virtual ~Animal();
 	std::string	getType(void) const;
 	void setType(std::string mytype); 
-	void makeSound(void) const;
+	virtual void makeSound(void) const = 0;
 };
 
 #endif

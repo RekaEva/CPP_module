@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:39:06 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/08 16:25:27 by cpollito         ###   ########.fr       */
+/*   Created: 2022/11/08 17:37:32 by cpollito          #+#    #+#             */
+/*   Updated: 2022/11/08 18:39:03 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL_HPP
-# define WRONG_ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include <iostream>
+#include <iostream> 
 
-class WrongAnimal
+class Brain
 {
-protected:
-	std::string type;
+private:
+	std::string	ideas[100];
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal &new_obj); // Copy constructor
-	WrongAnimal &operator = (const WrongAnimal &obj); //  Copy assignment operator
-	~WrongAnimal();
-	std::string	getType(void) const;
-	void setType(std::string mytype); 
-	void makeSound(void) const;
+	Brain();
+	Brain(const Brain &obj);
+	Brain& operator= (const Brain &val);
+	~Brain();
+	const std::string& getIdea(const unsigned int i) const;
+	void setIdea(const std::string &str, const unsigned int i);
 };
-
 #endif

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:39:06 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/08 16:25:27 by cpollito         ###   ########.fr       */
+/*   Created: 2022/11/08 13:23:07 by cpollito          #+#    #+#             */
+/*   Updated: 2022/11/08 18:56:53 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL_HPP
-# define WRONG_ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class WrongAnimal
+class Dog : public Animal
 {
-protected:
-	std::string type;
+private:
+	Brain	*brain;
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal &new_obj); // Copy constructor
-	WrongAnimal &operator = (const WrongAnimal &obj); //  Copy assignment operator
-	~WrongAnimal();
-	std::string	getType(void) const;
-	void setType(std::string mytype); 
-	void makeSound(void) const;
+	Dog();
+	Dog(const Dog &new_obj);
+	Dog &operator = (const Dog &obj);
+	virtual ~Dog();
+	void	makeSound(void) const;
+	void setIdea(const std::string &str, const unsigned int i);
 };
 
 #endif
