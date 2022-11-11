@@ -6,11 +6,12 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:38 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 14:20:22 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:52:33 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
