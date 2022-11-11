@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:35 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/10 18:45:14 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/11 13:41:58 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Bureaucrat
 		const std::string name; 
 		int	 grade;
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string _name, int grade);
 		Bureaucrat(const Bureaucrat& val);
 		Bureaucrat& operator = (const Bureaucrat& val);
@@ -30,22 +31,18 @@ class Bureaucrat
 		int getGrade(void) const;
 		void	setGrade(int _grade);
 
-		void	upGrade();
-		void 	downGrade();
+		void	incGrade();
+		void 	decGrade();
 
 		class GradeTooHighException : public std::exception {
 		public:
-			virtual const char*	what() const throw() {
-				return ("A bureaucrat cannot have a level higher than 1");
-			}
-	} ;
+			virtual const char*	what() const throw();
+		};
 
-	class GradeTooLowException : public std::exception {
+		class GradeTooLowException : public std::exception {
 		public:
-			virtual const char*	what() const throw() {
-				return ("A bureaucrat cannot have a level below 150");
-			}
-	} ;
+			virtual const char*	what() const throw();
+	    };
 };
 
 std::ostream& operator<< (std::ostream &out, const Bureaucrat& val);

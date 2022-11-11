@@ -6,30 +6,32 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:30 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/10 18:50:54 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/11 13:58:49 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(){}
+
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : name(_name)
 { 
 	this->grade = _grade;
-	try {
-		this->setGrade(grade);
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-}
-
-Bureaucrat::~Bureaucrat()
-{	
-}
-
-Bureaucrat::Bureaucrat(const Bureaucrat& val): name(val.name), grade(val.grade)
-{
+	if (_grade > 150) 
+		throw Bureaucrat::GradeTooLowException();
+	else if (_grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	std::cout << "Bureaucrat " << name << " with grade " << grade << " is created" \
+	<< std::endl;
 	
 }
+
+Bureaucrat::~Bureaucrat(){
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& val): 
+name(val.name), grade(val.grade)
+{}
 
 Bureaucrat& Bureaucrat::operator = (const Bureaucrat& val)
 {
@@ -51,7 +53,6 @@ int			Bureaucrat::getGrade() const
 
 void		Bureaucrat::setGrade(int _grade)
 {
-	grade = 150;
 	if (_grade > 150) 
 		throw Bureaucrat::GradeTooLowException();
 	else if (_grade < 1)
@@ -60,28 +61,28 @@ void		Bureaucrat::setGrade(int _grade)
 }
 
 
-void	Bureaucrat::upGrade()
+void	Bureaucrat::incGrade()
 {
-	try {
-		this->setGrade(--grade);
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
+	if ((grade - 1) <= 0)
+		throw GradeTooHighException();
+	--grade;
 }
-void	Bureaucrat::downGrade()
+void	Bureaucrat::decGrade()
 {
-	try {
-		this->setGrade(++grade);
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
+	if ((grade + 1) >150)
+		throw GradeTooLowException();
+	++grade;
 }
 
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("ERROR! Grade is too high ");
+}
 
-// const char* Bureaucrat::GradeTooLowException::what() const throw()
-// {
-// 	return "ERROR! Grade is too low!";
-// }
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("ERROR! Grade is too low");
+}
 
 std::ostream& operator<< (std::ostream &out, const Bureaucrat &val)
 {

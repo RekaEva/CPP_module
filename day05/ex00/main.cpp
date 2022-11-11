@@ -6,60 +6,59 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:38 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/10 18:33:35 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:20:22 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-// int	main(void) 
-// {
-// 	{
-// 		Bureaucrat	one("Lolo", 10);
-// 		std::cout << one;
-// 	}
-// 	{
-// 		std::cout << std::endl;
-// 		Bureaucrat	chel("Borya", -23);
-// 		std::cout << chel;
-// 		std::cout << std::endl;
-// 		Bureaucrat	chel2("Kolya", 323);
-// 		std::cout << chel2.getName() << " : " << chel.getGrade() << std::endl;
-// 	}
-// 	{
-// 		std::cout << std::endl;
-// 		Bureaucrat	chel("Tom", 1);
-// 		std::cout << chel;
-// 		chel.upGrade();
-// 		std::cout << chel;
-// 		chel.downGrade();
-// 		std::cout << chel;
-// 	}
-// 	return 0;
-// }
+int main()
+{
+	Bureaucrat b1("Mike", 2);
+	try{
+		std::cout << "--- create Bureaucrat with grade 0 ---" << std::endl;
+		Bureaucrat b2("Stiv", 0);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << " for bureaucrat " << std::endl << std::endl;
+	}
+	Bureaucrat b3("Tom", 130);
+	b3 = Bureaucrat("copyTom", 149);
+	std::cout << b3 << std::endl;
+	std::cout << b1 << std::endl;
+	
+	std::cout << "try DEGRADE" << std::endl;
+	Bureaucrat b4("Mike", 150);
+	try
+	{
+		std::cout << "--- degrade Tom ---" << std::endl;
+		b3.decGrade();
+		std::cout << b3 << std::endl;
+		b4.decGrade();
+		std::cout << b4 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() <<std::endl << std::endl;
+	}
+	std::cout << b3 << std::endl;
+	std::cout << b4 << std::endl;
 
-
-int	main(void) {
-{
-	Bureaucrat	chel("Valera", 13);
-	std::cout << chel;
-}
-{
-	std::cout << std::endl;
-	Bureaucrat	chel("Borya", -23);
-	std::cout << chel;
-	std::cout << std::endl;
-	Bureaucrat	chel2("Kolya", 323);
-	std::cout << chel2.getName() << " : " << chel.getGrade() << std::endl;
-}
-{
-	std::cout << std::endl;
-	Bureaucrat	chel("Tom", 1);
-	std::cout << chel;
-	chel.upGrade();
-	std::cout << chel;
-	chel.downGrade();
-	std::cout << chel;
-}
-	return 0;
+	std::cout << "try UPGRADE" << std::endl;
+	try
+	{
+		std::cout << "--- upgrade Tom ---" << std::endl;
+		b3.incGrade();
+		std::cout << b3 << std::endl;
+		Bureaucrat b5("Mikki", 1);
+		b5.incGrade();
+		std::cout << b5 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() <<std::endl << std::endl;
+	}
+	
+	return (0);
 }
