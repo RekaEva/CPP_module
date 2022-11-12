@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:23:07 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/12 15:36:24 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:34:04 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@
 class ShrubberyCreationForm : public Form
 {
 private:
-	// const static int	constSignGrade = 145;
-	// const static int	constExecGrade = 137;
+	const int	constSignGrade;
+	const int	constExecGrade;
 	std::string	target;
 public:
-	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string _name);
 	ShrubberyCreationForm(const ShrubberyCreationForm &val);
 	virtual ~ShrubberyCreationForm();

@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:23:02 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/12 16:52:49 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:58:01 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	RobotomyRequestForm& operator= (const RobotomyRequestForm& val);
 	
 	virtual void	execute(Bureaucrat const & executor) const;
+	virtual std::ostream&	print(std::ostream &out) const;
 };
 
 #endif

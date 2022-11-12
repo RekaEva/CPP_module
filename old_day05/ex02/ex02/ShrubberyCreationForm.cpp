@@ -6,14 +6,14 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:23:04 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/12 16:51:52 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:36:12 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string _name):
-Form ("ShrubberyForm", 145, 137), constSignGrade(145), constExecGrade(137)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string _name): 
+Form ("ShrubberyForm", 145, 137)
 {
     this->target = _name;
 }
@@ -22,9 +22,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &val) : 
-Form(val.getName(), val.getSignGrade(), val.getExecGrade()), constSignGrade(val.constSignGrade), constExecGrade(val.constExecGrade), target(val.target)
+Form(val.getName(), val.getSignGrade(), val.getExecGrade()), target(val.target)
 {
 	*this = val;
 }
