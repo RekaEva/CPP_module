@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:22:52 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 19:46:20 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:42:06 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ public:
 	PresidentialPardonForm& operator= (const PresidentialPardonForm& val);
 	
 	virtual void	execute(Bureaucrat const & executor) const;
-	virtual std::ostream&	print(std::ostream &out) const;
 };
 
 #endif
