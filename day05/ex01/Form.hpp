@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:49:48 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 18:28:16 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:53:07 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ public:
 		public:
 			GradeTooLowException(const std::string& _msg = "ERROR! Grade form is too low");
 			virtual ~GradeTooLowException() throw();
-			virtual const char* what() const throw();
+			virtual const char* what() const throw( );
 	};
 
 };

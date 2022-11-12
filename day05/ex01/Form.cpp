@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:49:51 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/12 14:57:08 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:53:12 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ Form::GradeTooHighException::GradeTooHighException(const std::string& _msg) : ms
 Form::GradeTooHighException::~GradeTooHighException() throw()
 {}
 
-const char* Form::GradeTooHighException::what() const throw()
+const char* Form::GradeTooHighException::what() const throw( )
 {
-	return msg.c_str();
+	return msg.c_str(); // нельзя &msg, потому что это string!
 }
 
 // to low

@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:49:48 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/12 13:24:48 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 20:11:47 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ private:
 public:
     Form(const std::string & _name = "_nonum", int grade2sign = 1, int grade2execute = 1);
 	Form(const Form &val);
-	~Form();
+	virtual ~Form();
 	Form& operator = (const Form &val);
 
 	const std::string&	getName() const;

@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:38 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/12 19:19:19 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 20:17:15 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 
 int main()
 {
+	Form * f1;
 	try
 	{
 		Intern Vasya;
-		Form * f1;
+		
 		f1 = Vasya.makeForm("PresidentialPardonForm", "ppppppp");
 		std::cout << *f1 << std::endl;
 		Bureaucrat one("N1", 100);
@@ -35,7 +36,9 @@ int main()
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+		// delete f1;
 	}
+	delete f1;
 	try
 	{
 		Intern Vasya;
@@ -46,10 +49,12 @@ int main()
 		two.signForm(*f1);
 		two.executeForm(*f1);
 		std::cout << "\nthis message you can see, becouse everything is right\n\n";
+		// delete f1;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	delete f1;
 	return (0);
 }
