@@ -29,6 +29,7 @@ clean:
 
 fclean:			clean
 				$(RM) $(NAME)
+				$(RM) tree_shrubbery
 
 re:				fclean all
 
