@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:49:48 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 18:28:16 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:24:48 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FORM_HPP
 
 #include "Bureaucrat.hpp"
+# include <string> 
+#include <fstream>
 
 class Bureaucrat;
 
@@ -36,6 +38,7 @@ public:
 	int		getExecGrade() const;
 
 	void	beSigned(const Bureaucrat &b);
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception	
 	{

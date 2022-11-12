@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:35 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 18:28:40 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:15:01 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ class Bureaucrat
 		~Bureaucrat();
 		
 		const std::string getName(void) const;
-		int getGrade(void) const;
+		int		getGrade(void) const;
 		void	setGrade(int _grade);
 
 		void	incGrade();
 		void 	decGrade();
 		void	signForm(Form& form);
+		void	executeForm(Form const &form);
 
 		class GradeTooHighException : public std::exception {
 		public:

@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:30 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 18:26:28 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:47:16 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade) : name(_name)
 		throw Bureaucrat::GradeTooLowException();
 	else if (_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	std::cout << "Bureaucrat " << name << " with grade " << grade << " is created" \
-	<< std::endl;
-	
+	// std::cout << "Bureaucrat " << name << " with grade " << grade << " is created" \
+	// << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -101,5 +100,19 @@ void	Bureaucrat::signForm(Form &form)
 	catch(const std::exception& e)
 	{
 		std::cerr<< name<< " couldn’t sign "<< form.getName()<< " because "<< e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr<< name<< " couldn't execute form "<< form.getName()<< " because "<< e.what() << std::endl;
+		throw;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cpollito <cpollito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:49:51 by cpollito          #+#    #+#             */
-/*   Updated: 2022/11/11 18:25:00 by cpollito         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:38:59 by cpollito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,12 @@ Form::GradeTooLowException::~GradeTooLowException() throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return msg.c_str();
+}
+
+void	Form::execute(Bureaucrat const & executor) const
+{
+	if(executor.getGrade() > gradeToExecute)
+		throw GradeTooLowException("the bureaucrat grade is not sufficient to execute this form.");
+	else if (!isSigned)
+		throw GradeTooLowException("this form is not signed.");
 }
