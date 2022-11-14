@@ -1,9 +1,9 @@
 
-NAME = iter
+NAME = array
 
 SRC = main.cpp 
 
-HEADER = iter.hpp
+HEADER = Array.hpp
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 
